@@ -1,0 +1,119 @@
+
+=========================================================<<<<<<< 1 >>>>>>>>> =======================================================================
+=========================================================<<<<<<< 1 >>>>>>>>> =======================================================================
+
+I understand that the `getUniqueArr` function may appear complex. Let me break it down into simpler steps:
+
+```javascript
+function getUniqueArr(arr, filterType) {
+  // Step 1: Map the array to extract the property specified by filterType
+  let step1 = arr.map((item) => item[filterType]);
+
+  // Step 2: Use map and indexOf to find the first occurrence of each unique value
+  let step2 = step1.map((item, i, final) => final.indexOf(item) === i && i);
+
+  // Step 3: Filter the array to keep only the unique items
+  let step3 = step2.filter((item) => arr[item]);
+
+  // Step 4: Map the filtered indices back to the original array to get unique items
+  let unique = step3.map((item) => arr[item]);
+
+  return unique;
+}
+
+console.log(getUniqueArr(AddedItem, "id"));
+```
+
+Now, let's break it down further with a simplified example:
+
+Suppose you have an array of products like this:
+
+```javascript
+const products = [
+  { id: 1, name: 'Product A' },
+  { id: 2, name: 'Product B' },
+  { id: 3, name: 'Product C' },
+  { id: 1, name: 'Product A' },
+];
+```
+
+And you want to get a unique list of products based on their `id`.
+
+1. **Step 1:** Map the array to extract the `id` property:
+
+   ```javascript
+   const step1 = products.map((item) => item.id);
+   // Result: [1, 2, 3, 1]
+   ```
+
+2. **Step 2:** Use map and indexOf to find the first occurrence of each unique `id`:
+
+   ```javascript
+   const step2 = step1.map((item, i, final) => final.indexOf(item) === i && i);
+   // Result: [0, 1, 2, null]
+   ```
+
+   In this step, `indexOf(item) === i` checks if the current index (`i`) is the first occurrence of the item in the array. If it is, it returns the index (`i`); otherwise, it returns `null`.
+
+3. **Step 3:** Filter the array to keep only the unique items:
+
+   ```javascript
+   const step3 = step2.filter((item) => item !== null);
+   // Result: [0, 1, 2]
+   ```
+
+   This step removes the `null` values that represent non-unique items.
+
+4. **Step 4:** Map the filtered indices back to the original array to get unique items:
+
+   ```javascript
+   const uniqueProducts = step3.map((item) => products[item]);
+   // Result: [{ id: 1, name: 'Product A' }, { id: 2, name: 'Product B' }, { id: 3, name: 'Product C' }]
+   ```
+
+   The `item` in this step represents the filtered indices from Step 3. We use these indices to extract the unique products from the original `products` array.
+
+The `getUniqueArr` function effectively extracts unique items from an array based on a specified property, such as `id` in this example. It may seem complex at first, but it's a common pattern for filtering unique items in JavaScript.
+
+
+
+=========================================================<<<<<<< 2 >>>>>>>>> =======================================================================
+
+=========================================================<<<<<<< 2 >>>>>>>>> =======================================================================
+
+
+
+
+
+The logic `(item, i, final) => final.indexOf(item) === i && i` is used within the `map` method to find the first occurrence of each unique item in an array and return its index. Let me break down this logic:
+
+- `item`: This is the current element of the array that we are iterating over.
+- `i`: This is the index of the current element.
+- `final`: This is the original array we are iterating over.
+
+The logic operates as follows:
+
+1. `final.indexOf(item) === i`: This part checks if the index `i` of the current element is the same as the first occurrence of `item` in the array `final`. In other words, it checks if the current element is the first occurrence of that item in the array.
+
+2. `&& i`: This part ensures that if the condition in the previous step is met (i.e., if the current element is the first occurrence of that item), it will return the index `i`.
+
+Here's a step-by-step example to illustrate this logic:
+
+Suppose you have an array:
+
+```javascript
+const arr = [3, 7, 2, 7, 5, 3];
+```
+
+Now, we want to find the first occurrence of each unique value and return their indices using the logic `(item, i, final) => final.indexOf(item) === i && i`.
+
+- For `item` = 3, `i` = 0: `final.indexOf(3)` returns 0, and since `0 === 0`, it returns 0. This means that the first occurrence of 3 is at index 0.
+- For `item` = 7, `i` = 1: `final.indexOf(7)` returns 1, and since `1 === 1`, it returns 1. This means that the first occurrence of 7 is at index 1.
+- For `item` = 2, `i` = 2: `final.indexOf(2)` returns 2, and since `2 === 2`, it returns 2. This means that the first occurrence of 2 is at index 2.
+- For `item` = 7, `i` = 3: `final.indexOf(7)` returns 1 (the first occurrence of 7), but since `3 !== 1`, it doesn't return 3. This is because the current element is not the first occurrence of 7.
+- For `item` = 5, `i` = 4: `final.indexOf(5)` returns 4, and since `4 === 4`, it returns 4. This means that the first occurrence of 5 is at index 4.
+- For `item` = 3, `i` = 5: `final.indexOf(3)` returns 0 (the first occurrence of 3), but since `5 !== 0`, it doesn't return 5. This is because the current element is not the first occurrence of 3.
+
+
+
+So, the result of applying this logic to the `arr` array would be `[0, 1, 2, null, 4, null]`. This result indicates the indices of the first occurrences of unique values in the array.

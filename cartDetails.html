@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+
+    <!-- Bootstrap-->
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+
+    <!-- Style.css -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cardInfo.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+
+</head>
+<body>
+
+<!-- Nav -->
+    
+<nav class="container-fluid d-flex justify-content-center text-center align-items-center justify-content-between py-2">
+    <h5 class=""><a href="">Shopping Cart</a></h5>
+
+    <!-- Log In + Sign Up ==> dissapear after Log -->
+
+    <ul id="links" class="d-flex mr-2">
+        <li class="p-2 mx-2"><a href="login.html" class="text-black-50">Sign In</a></li>
+        <li class="p-2 mx-2"><a href="register.html" class="text-black-50">Sign Up</a></li>
+    </ul>
+
+    <!-- User Links -->
+        <ul id="link-user" class="d-flex align-items-center text-black-50">
+
+            <li class="userName mx-2 font-weight-bold"><a class="text-success" href=""></a></li>
+
+            <li class="shopping-card d-flex mx-2 position-relative">
+
+             <i class="fa fa-shopping-cart mx-2" class="card-Icon"></i>
+             <span class="badge d-block text-center position-absolute"></span>
+             
+             <div class="card-product position-absolute p-2">
+                <div></div>
+                <a class="text-black-50 d-block" href="remove.html">View All puoduct </a>
+             </div>
+            </li>
+            <li><a class="text-danger font-weight-bold" href="#" id="logOut">Log Out</a></li>
+         </ul>
+</nav>
+
+<!-- Container  -->
+
+
+<div class="container">
+    
+    <div class="row " id="products">
+        <div class="item-details">
+
+        </div>
+    </div>
+</div>
+
+
+
+ <!-- Script -->
+<script src="js/login.js"></script>
+<script src="js/user.js"></script>
+<script src="js/cartDetails.js"></script>
+</body>
+
+</html>

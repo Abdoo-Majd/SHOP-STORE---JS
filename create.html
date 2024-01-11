@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create</title>
+
+    <!-- Bootstrap-->
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+
+    <!-- Style.css -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cardInfo.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="css/fonts/all.min.css">
+    <link rel="stylesheet" href="css/fonts/fontawesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="js/bootstrap/bootstrap.bundle.min.js">
+
+</head>
+<body>
+<!-- Nav -->
+    
+<nav class="container-fluid d-flex justify-content-center text-center align-items-center justify-content-between py-2">
+    <h5 class=""><a href="index.html">Shopping Cart</a></h5>
+
+    <!-- Log In + Sign Up ==> dissapear after Log -->
+
+    <ul id="links" class="d-flex mr-2">
+        <li class="p-2 mx-2"><a href="login.html" class="text-black-50">Sign In</a></li>
+        <li class="p-2 mx-2"><a href="register.html" class="text-black-50">Sign Up</a></li>
+    </ul>
+
+    <!-- User Links -->
+        <ul id="link-user" class="d-flex align-items-center text-black-50">
+
+            <li class="userName mx-2 font-weight-bold"><a class="text-success" href=""></a></li>
+            <li class="favorites mx-2 font-weight-bold"><a class="text-success" href="favorites.html">Favorites</a></li>
+
+
+            <li class="shopping-card d-flex mx-2 position-relative">
+
+             <i class="fa fa-shopping-cart mx-2" class="card-Icon"></i>
+             <span class="badge d-block text-center position-absolute"></span>
+             
+             <div class="card-product position-absolute p-2">
+                <div></div>
+                <a class="text-black-50 d-block" href="remove.html">View All puoduct </a>
+             </div>
+            </li>
+            <li><a class="text-danger font-weight-bold" href="#" id="logOut">Log Out</a></li>
+         </ul>
+</nav>
+
+<!-- Card Register -->
+
+<div class="container">
+    <input type="search" class="input-group py-2 px-3 my-3 col-md-8 mx-auto col-12" name="" id="search" placeholder="Enter Search ">
+    <div class="row" id="products">
+    </div>
+</div>
+
+<!-- Create Product  -->
+
+<section class="row container mx-auto">
+    <a href="create.html" class="create-product position-fixed create"><i class="fa fa-plus-circle"></i></a>
+    <form id="" class="infos col-sm-12 col-11 my-3 mx-auto py-3 mt-4" action="">
+        <input id="name" class="my-md-5 my-5 px-2 py-md-3 py-3 border-0 col-md-10 col-12 mx-md-auto d-block  " type="email" placeholder="Enter name ...">
+        <input id="desc" class="my-md-5 my-5 px-2 py-md-3 py-3 border-0 col-md-10 col-12 mx-md-auto d-block  " type="password" placeholder="Enter Desc ...">    
+        <input id="img-file" class="my-md-5 my-5 px-2 py-md-3 py-3 border-0 col-md-10 col-12 mx-md-auto d-block  " type="file" placeholder="Enter Desc ...">    
+        
+        <select name="" id="product-select" class="custom-select my-md-5 my-5 px-2 py-md-3 py-3 border-0 col-md-10 col-12 mx-md-auto d-block">
+            <option value="" hidden class="bg-danger text-black-50"> Select Size :</option>
+            <option value="small">small</option>
+            <option value="medium">medium</option>
+            <option value="large">large</option>
+        </select>
+        <input id="create" class="my-md-5 my-5 px-2 py-md-3 py-3  col-md-5 col-10 mx-auto d-block" type="submit" value="Create" >
+    </form>
+</section>
+
+
+
+<!-- Script -->
+<script src="js/user.js"></script>
+<script src="js/create.js"></script>
+
+</body>
+</html>

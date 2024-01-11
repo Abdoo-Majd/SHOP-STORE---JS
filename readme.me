@@ -1,0 +1,31 @@
+!!!!!! Things !!!!!
+
+object is like element in json {}
+string is string like text "..."
+
+localStorage accept just the string ==> to do that use (JSON.stringfy) ==> so this function conver object to string
+
+==> Json.parse : tranfer string to obeject = > because js accept just the object 
+
+
+
+1 ------>>>>>>
+
+let addedItem =JSON.parse(localStorage.getItem("ProductCart")) ? JSON.parse(localStorage.getItem("ProductCart")) : []; 
+
+
+==> check if there is already a product Cart ....so who is tis productCartDB ??? : 
+--< its this : 
+    AddedItem = [...AddedItem , choosenItem] ; 
+    localStorage.setItem("ProductCart" , JSON.stringify(AddedItem)) ; 
+
+--> so when the brouwser run : he check if the user clicko n add to cart and add his title in the div and stock it in productCart and if its not he start from the begining like from the 0 
+
+!!!!! we did all of that to not lose the data after refreshing the page ===> if he choose 2 things and you refresh it will still 2 notgoback to 0 
+
+
+
+========= search Input ============ 
+
+
+

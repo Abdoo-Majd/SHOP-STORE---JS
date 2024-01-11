@@ -1,0 +1,74 @@
+:root {
+  --button-bg-color: rgb(255, 60, 0); 
+  --button-bg-color-hover : rgba(255, 64, 0, 0.701); 
+
+}
+
+/* [1]  == >  Add To Cart */
+
+.add-to-cart {
+    background: var(--button-bg-color-hover) !important;
+    outline: 0 !important;
+    border: 0 !important;
+    transition: 0.3 ease-in-out;
+    border-color: red !important;
+}
+.add-to-cart:hover {
+    background: var(--button-bg-color) !important;
+   
+}
+
+/* [2]  == >  Shopping-Icon */
+
+ul#link-user .shopping-card i{
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--button-bg-color-hover);
+}
+
+/* [3]  == >  Badge */
+
+ul#link-user .shopping-card .badge {
+  width: 20px;
+  height: 20px;
+  background: rgba(220, 20, 60, 0.872);
+  color: #fff;
+  border-radius: 50%;
+  top: -9px;
+  left: 20px;
+}
+
+
+/* [4]  == > Card-product */
+
+.card-product {
+  display: none;
+  transform: translate(-50% , 0);
+  background: rgba(180, 159, 159, 0.788);
+  top: 60px;
+  width: 200px;
+  z-index: 1;
+  border: 1px solid green;
+}
+.card-product a {
+font-weight: bold;
+background: rgb(180, 102, 6);
+text-align: center;
+
+}
+
+
+/* [5] = No Product !! */
+
+.emptyProduct {
+  background: rgba(255, 153, 0, 0.655);
+  border-radius: 10px;
+  height: 25vh;
+  font-size: 25px;
+  transition: all 0.5s ease-in-out;
+}
